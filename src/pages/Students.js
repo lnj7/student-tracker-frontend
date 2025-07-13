@@ -10,7 +10,7 @@ export default function Students() {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get('/students');
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/students`);
         setStudents(res.data);
       } catch (err) {
         console.error('Error fetching students:', err);

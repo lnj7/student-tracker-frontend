@@ -13,7 +13,7 @@ export default function MapPage() {
     const fetchStudents = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('/students', {
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/students`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log('✅ Students fetched:', res.data);

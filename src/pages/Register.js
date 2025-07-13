@@ -17,7 +17,7 @@ export default function Register() {
     setSuccess('');
 
     try {
-      await axios.post('/users/register', { name, email, password });
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/register`, { name, email, password });
       setSuccess('Registration successful! Redirecting to login...');
       setTimeout(() => navigate('/login'), 1500);
     } catch (err) {

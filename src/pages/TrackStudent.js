@@ -22,7 +22,7 @@ export default function TrackStudent() {
   useEffect(() => {
     const fetchStudent = async () => {
       try {
-        const res = await axios.get(`/students/${id}`);
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/students/${id}`);
         setStudent(res.data);
       } catch (err) {
         console.error('❌ Failed to load student:', err);

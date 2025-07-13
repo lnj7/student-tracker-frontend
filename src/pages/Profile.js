@@ -28,7 +28,7 @@ export default function Profile() {
 
   const handleSave = async () => {
     try {
-      const res = await axios.patch('/users/me', formData);
+      const res = await axios.patch(`${process.env.REACT_APP_API_BASE_URL}/api/users/me`, formData);
       setUser(res.data);
       setEditing(false);
       alert('Profile updated!');

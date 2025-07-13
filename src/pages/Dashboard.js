@@ -16,7 +16,7 @@ export default function Dashboard() {
     const fetchStudents = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('/students', {
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/students`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setStudents(res.data);
@@ -33,7 +33,7 @@ export default function Dashboard() {
   const handleDeleteStudent = async (id) => {
     if (!window.confirm('Are you sure you want to delete this student?')) return;
     try {
-      await axios.delete(`/students/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/students/${id}`);
       setStudents(prev => prev.filter(s => s._id !== id));
     } catch (err) {
       console.error('Error deleting student:', err);
@@ -43,7 +43,7 @@ export default function Dashboard() {
 
   const handleAddStudent = async (newStudent) => {
     try {
-      const res = await axios.post('/students', newStudent);
+      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/students`, newStudent);
       setStudents(prev => [...prev, res.data]);
       setShowAddForm(false);
     } catch (err) {
@@ -54,7 +54,7 @@ export default function Dashboard() {
 
   const handleUpdateStudent = async (id, updated) => {
     try {
-      await axios.patch(`/students/${id}`, updated);
+      await axios.patch(`${process.env.REACT_APP_API_BASE_URL}/api/students/${id}`, updated);
       setStudents(prev => prev.map(s => s._id === id ? { ...s, ...updated } : s));
       setStudentToUpdate(null);
     } catch (err) {

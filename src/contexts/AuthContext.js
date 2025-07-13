@@ -15,7 +15,7 @@ console.log('✅ [FETCH USER] Token in localStorage:', token);
 
       if (!token) throw new Error('No token found');
 
-      const res = await axios.get('/users/me', {
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/users/me`, {
         
         headers: {
           
@@ -44,7 +44,7 @@ console.log('✅ [FETCH USER] Token in localStorage:', token);
   }, []);
 
   const login = async (credentials) => {
-    const res = await axios.post('/users/login', credentials);
+    const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/login`, credentials);
       console.log('✅ [LOGIN FUNCTION] Received token from server:', res.data.token);
 
     localStorage.setItem('token', res.data.token);
