@@ -26,7 +26,7 @@ export default function TrackMap() {
   useEffect(() => {
     const fetchStudent = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/students/${id}`);
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/astudents/${id}`);
         setStudent(res.data);
       } catch (err) {
         console.error(err);
