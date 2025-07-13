@@ -1,0 +1,55 @@
+.map-wrapper {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+.student-marker {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.student-marker .marker-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 2px solid #27ae60;
+}
+
+.marker-name {
+  background-color: #3498db;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 12px;
+  border: 2px solid #2980b9;
+}
+
+.map-wrapper {
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}

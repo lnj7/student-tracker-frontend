@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+:root {
+  --color-bg: #ffffff;
+  --color-text: #2c3e50;
+  --color-link: #2c3e50;
+  --color-link-hover-bg: #f2f2f2;
+  --color-link-hover-text: #34495e;
+  --color-button-bg: #e74c3c;
+  --color-button-bg-hover: #c0392b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark-mode {
+  --color-bg: #2c3e50;
+  --color-text: #ecf0f1;
+  --color-link: #ecf0f1;
+  --color-link-hover-bg: #34495e;
+  --color-link-hover-text: #ffffff;
+  --color-button-bg: #c0392b;
+  --color-button-bg-hover: #e74c3c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: var(--color-bg);
+  padding: 12px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.nav-link {
+  color: var(--color-link);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: var(--color-link-hover-bg);
+  color: var(--color-link-hover-text);
+}
+
+.nav-user {
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.logout-button {
+  background-color: var(--color-button-bg);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
   color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.logout-button:hover {
+  background-color: var(--color-button-bg-hover);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--color-link);
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: var(--color-link);
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-link-hover-bg);
+  color: var(--color-link-hover-text);
 }

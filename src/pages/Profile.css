@@ -1,0 +1,81 @@
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.profile-title {
+  margin-bottom: 24px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.profile-input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.profile-input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.profile-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.profile-button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.profile-button.save {
+  background-color: #27ae60;
+  color: white;
+}
+
+.profile-button.cancel {
+  background-color: #bdc3c7;
+  color: white;
+}
+
+.profile-button.edit {
+  background-color: #3498db;
+  color: white;
+  width: 100%;
+}
+
+.profile-button.logout {
+  background-color: #e74c3c;
+  color: white;
+  width: 100%;
+  padding: 12px;
+}

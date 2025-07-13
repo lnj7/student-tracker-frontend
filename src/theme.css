@@ -1,0 +1,138 @@
+/* Global Color Variables */
+:root {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --border: #e5e7eb;
+}
+
+.dark-mode {
+  --bg: #1f2937;
+  --surface: #111827;
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --danger: #f87171;
+  --danger-hover: #ef4444;
+  --border: #374151;
+}
+
+/* Body Styling */
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--surface);
+  padding: 12px 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.nav-link {
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+.nav-link:hover {
+  background-color: var(--border);
+}
+
+.nav-user {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.button-primary {
+  background-color: var(--primary);
+  color: white;
+}
+.button-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.button-danger {
+  background-color: var(--danger);
+  color: white;
+}
+.button-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+.button-outline {
+  background: none;
+  border: 1px solid var(--text);
+  color: var(--text);
+}
+.button-outline:hover {
+  background-color: var(--border);
+}
+
+.page {
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.page-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}

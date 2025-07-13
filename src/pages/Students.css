@@ -1,0 +1,171 @@
+/* Container styling */
+.students-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333;
+}
+
+/* Header styling */
+.students-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.students-header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  flex: 1 1 auto;
+}
+
+.add-btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  color: #fff;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background: linear-gradient(90deg, #219150, #27ae60);
+}
+
+/* Loader and Empty State */
+.loader,
+.no-students {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 40px 20px;
+  color: #888;
+}
+
+/* Grid layout */
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Card styling */
+.student-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.student-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.student-card h3 {
+  margin-top: 0;
+  color: #27ae60;
+  font-size: 1.4rem;
+}
+
+.student-card p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Track button */
+.track-btn {
+  display: inline-block;
+  margin-top: 16px;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.track-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .students-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .student-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .student-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .students-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .students-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .add-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .student-card {
+    padding: 16px;
+  }
+
+  .student-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .track-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .students-container {
+    padding: 12px;
+  }
+
+  .students-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .add-btn {
+    padding: 8px 12px;
+  }
+
+  .student-card {
+    padding: 14px;
+  }
+
+  .student-card p {
+    font-size: 0.9rem;
+  }
+}
