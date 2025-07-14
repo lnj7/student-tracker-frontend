@@ -10,11 +10,18 @@ export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
+
+        // ✅ SANITIZE user input here
+    const cleanedEmail = email.trim().toLowerCase();
+    const cleanedPassword = password.trim();
+
     try {
-      await login({ email, password });
+      
+      await login({ email: cleanedEmail, password: cleanedPassword });
       navigate('/');
     } catch (err) {
       console.error(err);

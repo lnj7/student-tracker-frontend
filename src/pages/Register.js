@@ -15,10 +15,17 @@ export default function Register() {
     e.preventDefault();
     setError('');
     setSuccess('');
+    const cleanedEmail = email.trim().toLowerCase();
+    const cleanedPassword = password.trim();
+
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/register`, { name, email, password });
-      setSuccess('Registration successful! Redirecting to login...');
+      
+      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/register`, { name, email: cleanedEmail, password: cleanedPassword });
+      console.log('✅ [after registration ] token:', res.data.token);
+       // ✅ Store token in localStorage
+    localStorage.setItem('token', res.data.token);
+     setSuccess('Registration successful! Redirecting to login...');
       setTimeout(() => navigate('/login'), 1500);
     } catch (err) {
       console.error(err);

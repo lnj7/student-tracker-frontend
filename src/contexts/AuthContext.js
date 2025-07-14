@@ -24,7 +24,7 @@ console.log('✅ [FETCH USER] Token in localStorage:', token);
         },
         
       });
-      console.log('✅ [FETCH USER] Calling /users/me with Authorization header:', `Bearer ${token}`);
+      console.log('✅ [FETCH USER] Calling api/users/me with Authorization header:', `Bearer ${token}`);
 
     
       setUser(res.data);
